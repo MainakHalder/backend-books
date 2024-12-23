@@ -7,28 +7,28 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
-const jsonData = fs.readFileSync("books.json", "utf-8");
-const booksData = JSON.parse(jsonData);
-function seedData() {
-  try {
-    for (const book of booksData) {
-      const newBook = new Books({
-        title: book.title,
-        author: book.author,
-        publishedYear: book.publishedYear,
-        genre: book.genre,
-        language: book.language,
-        country: book.country,
-        rating: book.rating,
-        summary: book.summary,
-        coverImageUrl: book.coverImageUrl,
-      });
-      newBook.save();
-    }
-  } catch (error) {
-    console.log("Error while seeding", error);
-  }
-}
+// const jsonData = fs.readFileSync("books.json", "utf-8");
+// const booksData = JSON.parse(jsonData);
+// function seedData() {
+//   try {
+//     for (const book of booksData) {
+//       const newBook = new Books({
+//         title: book.title,
+//         author: book.author,
+//         publishedYear: book.publishedYear,
+//         genre: book.genre,
+//         language: book.language,
+//         country: book.country,
+//         rating: book.rating,
+//         summary: book.summary,
+//         coverImageUrl: book.coverImageUrl,
+//       });
+//       newBook.save();
+//     }
+//   } catch (error) {
+//     console.log("Error while seeding", error);
+//   }
+// }
 
 // const bookData = {
 //   title: "Lean In",
